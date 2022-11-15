@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramiro Perez</title>
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header id="main-header">
+        <nav id="navbar">
+            <ul id="navbar-list">
+                <li class="navbar-list-item">
+                    <a href="#">Home</a>
+                </li>
+                <li class="navbar-list-item">
+                    <a href="#">Portfolio</a>
+                </li>
+                <li class="navbar-list-item">
+                    <a href="#">About me</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main">
+        <section id="hero" class="web-section">
+            <div id="greeting-container">
+                <h1 id="main-title">Hello! I´m Ramiro Perez,</h1>
+                <h2 id="profession" class="gradient-text">Frontend Developer</h2>
+            </div>
+            <button class="btn-style1" id="portfolio-btn">Mi Portfolio</button>
+        </section>
+        <section id="my-portfolio" class="web-section">
+            <div id="category-container">
+                <div class="category-card" data-language="HTML">
+                    <div class="category-img" id="html-icon"></div>
+                    <p class="category-name">HTML</p>
+                </div>
+                <div class="category-card" data-language="CSS">
+                    <div class="category-img" id="css-icon"></div>
+                    <p class="category-name">CSS</p>
+                </div>
+                <div class="category-card" data-language="JAVASCRIPT">
+                    <div class="category-img" id="js-icon"></div>
+                    <p class="category-name">JS</p>
+                </div>
+            </div>
+            <div id="project-container">
+                <div class="project-card" style="background-image: url('./img/ramusic.PNG');">
+                    <div class="project-info">
+                        <h3 class="project-name">Racademy Website</h3>
+                        <div class="technologies">
+                            <div class="img-technologie html"></div>
+                            <div class="img-technologie css"></div>
+                            <div class="img-technologie js"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-style1" id="view-more-projects">View More</button>
+        </section>
+    </main>
+    <footer id="footer">
+        <p id="sign">Coded by <a target="_blank" href="https://github.com/RamiroPerez07">myself</a></p>
+    </footer>
+    <script src="./index.js"></script>
+</body>
+</html>

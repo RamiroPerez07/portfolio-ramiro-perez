@@ -1,0 +1,406 @@
+/*Montserrat Font*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root{
+    --colorWhite: #ffffff;
+    /*Color for Background*/
+    --bgPrimary : #0E1216;
+    --bgSecondary: #282A37;
+    --bgTertiary: #222128;
+    --bgSecondary90: #282a37c2;
+
+    /*Color selected*/
+    --selColor: #3e4253;
+
+    /*Text and details*/
+    --color: #555966;
+    --color0: #575C74;
+    --color1: #4688EE;
+    --color2: #5CBACD;
+    --color3: #EFA82F;
+
+    /*Font size*/
+    --fs-xsmall0: 0.6rem;
+    --fs-xsmall1: 0.7rem;
+    --fs-small0: 0.8rem;
+    --fs-small1: 0.9rem;
+    --fs-medium0: 1.2rem;
+    --fs-medium1: 1.4rem;
+    --fs-large0: 2.2rem;
+    --fs-large1: 2.5rem;
+    --fs-xlarge0: 3rem;
+
+    /*Font weight*/
+    --fw-light: 300;
+    --fw-normal: 500;
+    --fw-bold: 800;
+}
+
+html{
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: start;
+    justify-items: center;
+    scroll-behavior: smooth;
+}
+
+body{
+    width: 100%;
+    max-width: 1980px;
+    height: auto;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: start;
+    justify-items: center;
+    grid-auto-rows: min-content;
+    position: relative;
+    background-color: var(--bgPrimary);
+}
+
+/* General Settings */
+/* ################ */
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.btn-style1{
+    padding: 12px 25px;
+    cursor: pointer;
+    background: var(--bgPrimary);
+    color: var(--color2);
+    border: 1px solid var(--color2);
+    font-size: var(--fs-medium0);
+    font-weight: var(--fw-bold);
+    border-radius: 5px;
+    letter-spacing: 1px;
+    transition: all 0.5s;
+}
+
+.btn-style1:hover{
+    background: linear-gradient(45deg, var(--color1), var(--color2));
+    transition: all 0.5s;
+    color: var(--colorWhite);
+}
+
+
+.gradient-text{
+    background: -webkit-linear-gradient(45deg, var(--color1),var(--color2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* End General Settings */
+/* #################### */
+
+#main-header{
+    width: 100%;
+    height: auto;
+    min-height: 50px;
+    display: grid;
+    justify-items: end;
+    padding: 10px 50px;
+    background-color: var(--bgTertiary);
+    position:sticky;
+    top: 0;
+    border-bottom: 1px solid var(--bgSecondary);
+}
+
+#navbar{
+    width: 350px;
+    height: auto;
+    min-height: 30px;
+    display: grid;
+    place-items: center;
+}
+
+#navbar-list{
+    width: 350px;
+    height: auto;
+    min-height: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+}
+
+.navbar-list-item{
+    width: 100%;
+    list-style: none;
+    display: grid;
+    place-items: center;
+}
+
+.navbar-list-item a{
+    font-size: var(--fs-small1);
+    font-weight: var(--fw-normal);
+    color: var(--colorWhite);
+    position: relative;
+    padding: 3px;
+}
+
+.navbar-list-item a::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(45deg, var(--color1), var(--color2));
+    z-index: 1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease-in-out;
+}
+
+.navbar-list-item a:hover{
+    background: -webkit-linear-gradient(45deg, var(--color1),var(--color2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: brightness(1.5);
+    transition: all 0.5s;
+}
+
+.navbar-list-item a:hover::before{
+    transform: scaleX(1);
+}
+
+#main{
+    width: 100%;
+    height: auto;
+    display: grid;
+    align-items: start;
+    justify-items: center;
+    padding: 0 50px 71px 50px;
+}
+
+.web-section{
+    width: 100%;
+    height: auto;
+    min-height: calc(100vh - 50px); /*50px altura del header*/
+    display: grid;
+    place-items: center;
+    padding: 40px;
+}
+
+#hero{
+    gap: 25px;
+}
+
+#greeting-container{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-auto-rows: min-content;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+#main-title{
+    font-size: var(--fs-xlarge0);
+    font-weight: var(--fw-bold);
+    color: var(--colorWhite);
+}
+
+#profession{
+    font-size: var(--fs-xlarge0);
+    font-weight: var(--fw-bold);
+}
+
+#my-portfolio{
+    grid-auto-rows: min-content;
+    gap: 10px;
+}
+
+#category-container{
+    width: auto;
+    height: auto;
+    min-height: 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    place-items: center;
+    gap: 40px;
+}
+
+.category-card{
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: start;
+    gap: 10px;
+    background-color: var(--bgTertiary);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.category-card:hover{
+    background-color: var(--selColor);
+}
+
+.category-img{
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#html-icon{
+    background-image: url("./img/html-icon.png");
+}
+
+#css-icon{
+    background-image: url("./img/css-icon.png");
+}
+
+#js-icon{
+    background-image: url("./img/js-icon.png");
+}
+
+.category-name{
+    color: var(--color);
+    text-align: center;
+    font-size: var(--fs-small1);
+    font-weight: var(--fw-bold);
+    transition: color 0.3s;
+}
+
+.category-name{
+    color: var(--colorWhite);
+    transition: color 0.3s;
+}
+
+.selected-category{
+    background-color: var(--selColor);
+}
+
+/*Porject card*/
+#project-container{
+    width: 100%;
+    height: auto;
+    padding: 25px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    grid-auto-rows: auto;
+}
+
+.project-card{
+    width: 95%;
+    max-width: 475px;
+    height: 220px;
+    background-color: var(--bgSecondary);
+    border-radius: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.project-info{
+    width: 100%;
+    height: 55px;
+    position: absolute;
+    bottom: 0;
+    padding: 5px;
+    background-color: var(--bgSecondary90);
+    display: grid;
+    grid-auto-rows: min-content;
+    grid-template-columns: 1fr;
+    place-items: center;
+    gap: 5px;
+}
+
+.project-name{
+    font-size: var(--fs-small0);
+    color: var(--colorWhite);
+    font-weight: var(--fw-bold);
+}
+
+.technologies{
+    width: auto;
+    height: auto;
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    gap: 10px;
+}
+
+.img-technologie{
+    width: 20px;
+    height: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.html{
+    background-image: url("./img/html-icon.png");
+}
+
+.css{
+    background-image: url("./img/css-icon.png");
+}
+
+.js{
+    background-image: url("./img/js-icon.png");
+}
+
+/* Footer */
+#footer{
+    width: 100%;
+    height: auto;
+    min-height: 70px;
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    bottom: 0;
+    position: absolute;
+    border-top: 1px solid var(--bgSecondary);
+    background-color: var(--bgPrimary);
+}
+
+#sign{
+    font-size: var(--fs-small0);
+    font-weight: var(--fw-light);
+    color: var(--color0);
+}
+
+#sign a{
+    font-size: var(--fs-small1);
+    color: var(--color);
+    font-weight: var(--fw-bold);
+}
+
+#sign a:visited{
+    font-size: var(--fs-small1);
+    color: var(--color);
+    font-weight: var(--fw-bold);
+}
+
+#sign a:hover{
+    transition: color 0.3s;
+    color: var(--colorWhite);
+}
+
