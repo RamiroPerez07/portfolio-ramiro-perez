@@ -219,8 +219,10 @@ a{
 }
 
 #hero{
+    grid-auto-rows: min-content;
+    place-content: center;
     max-height: 1080px;
-    gap: 25px;
+    gap: 85px;
 }
 
 #greeting-container{
