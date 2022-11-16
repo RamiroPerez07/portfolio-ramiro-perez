@@ -4,7 +4,7 @@ const Projects = [
     {
         id: 1,
         name: "Racademy Website",
-        description: "",
+        description: "Guitar lesson sales simulation",
         url: "https://racademy-zeta.vercel.app/",
         img: "./img/racademy-website.PNG",
         technologies: ["ALL", "HTML", "CSS", "JAVASCRIPT"]
@@ -12,7 +12,7 @@ const Projects = [
     {
         id: 2,
         name: "Ramusic",
-        description: "",
+        description: "Listen to the top 10 songs from different artists",
         url: "https://ramusic-music-app.vercel.app/",
         img: "./img/ramusic.PNG",
         technologies: ["ALL", "CSS", "JAVASCRIPT"]
@@ -20,7 +20,7 @@ const Projects = [
     {
         id: 3,
         name: "Nucba Zappi",
-        description: "",
+        description: "Food ecommerce - Challenge from Nucba",
         url: "https://food-market-coral.vercel.app/",
         img: "./img/nucbazappi.PNG",
         technologies: ["ALL","JAVASCRIPT"]
@@ -28,7 +28,7 @@ const Projects = [
     {
         id: 4,
         name: "Guitar Chords App",
-        description: "",
+        description: "Discover the musical nomenclature of chords starting from the position of the fingers",
         url: "https://guitar-chords-app.vercel.app/",
         img: "./img/guitar-chords.PNG",
         technologies: ["ALL","HTML", "JAVASCRIPT"]
@@ -36,7 +36,7 @@ const Projects = [
     {
         id: 5,
         name: "Nasa Image Of the Day",
-        description: "App that consume data from Nasa API",
+        description: "Discover the astronomical image of the day",
         url: "https://nasa-images-xi.vercel.app/",
         img: "./img/nasa.PNG",
         technologies: ["ALL","JAVASCRIPT"]
@@ -60,7 +60,7 @@ const Projects = [
     {
         id: 8,
         name: "Buyer´s App",
-        description: "Aplication for business buyers",
+        description: "Application for professional buyers",
         url: "https://buyer-s-app.vercel.app/",
         img: "./img/buyerapp.PNG",
         technologies: ["ALL","HTML","CSS","JAVASCRIPT"]
@@ -68,7 +68,7 @@ const Projects = [
     {
         id: 9,
         name: "Calculator",
-        description: "Simple Calculator App",
+        description: "Calculator for simple mathematical operations between two numbers",
         url: "https://calculadora-ramiperez.vercel.app/",
         img: "./img/calculator.PNG",
         technologies: ["ALL","JAVASCRIPT"]
@@ -76,7 +76,7 @@ const Projects = [
     {
         id: 10,
         name: "Dragon Ball Super Pics",
-        description: "Img and info from DB Super",
+        description: "Images and information about the characters of Dragon Ball Super",
         url: "https://dragon-ball-super-app.vercel.app/",
         img: "./img/dragonballpics.PNG",
         technologies: ["ALL","JAVASCRIPT"]

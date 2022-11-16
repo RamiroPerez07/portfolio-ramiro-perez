@@ -1,5 +1,8 @@
 //variables
 
+//elementos
+const navbar = document.getElementById("navbar")
+
 //contenedores
 const projectContainer = document.getElementById("project-container");
 const categoryContainer = document.getElementById("category-container");
@@ -9,6 +12,7 @@ categoriesCards = [...categoriesCards];
 //botones
 const showMoreProjectsBtn = document.getElementById("show-more-projects");
 const goToPortfolioBtn = document.getElementById("portfolio-btn");
+const burguerBtn = document.getElementById("burguer-menu-btn")
 
 //controlador
 ProjectViewController = {
@@ -26,6 +30,7 @@ function createHtmlProjectCard(project){
                 ${project.technologies.includes("CSS")?'<div class="img-technologie css"></div>':""}
                 ${project.technologies.includes("JAVASCRIPT")?'<div class="img-technologie js"></div>':""}
             </div>
+            <p class="project-description">${project.description}</p>
         </div>
     </div>
     `
@@ -135,6 +140,23 @@ function openProjectUrl(event){
     window.open(urlProject)
 }
 
+function showProjectDescription(event){
+    if (!event.target.classList.contains("project-card"))return;
+    const projectInfo = event.target.children[0];
+    projectInfo.classList.add("translateY");
+}
+
+function hideProjectDescription(event){
+    if (!event.target.classList.contains("project-card"))return;
+    const projectInfo = event.target.children[0];
+    projectInfo.classList.remove("translateY");
+}
+
+function showMenu(){
+    navbar.classList.toggle("show-navbar");
+    burguerBtn.classList.toggle("hide-menu")
+}
+
 function init(){
     renderProjectsInProjectContainer(Projects);
     setViewMoreBtnState();
@@ -142,7 +164,16 @@ function init(){
     showMoreProjectsBtn.addEventListener("click", showMoreProjects);
     goToPortfolioBtn.addEventListener("click", function(){window.location.href='#my-portfolio'});
 
-    projectContainer.addEventListener("click", openProjectUrl)
+    projectContainer.addEventListener("click", openProjectUrl);
+    projectContainer.addEventListener("mouseover", showProjectDescription);
+    projectContainer.addEventListener("mouseout", hideProjectDescription);
+    burguerBtn.addEventListener("click", showMenu);
+    navbar.addEventListener("click", showMenu);
+    window.addEventListener("scroll", function(){
+        if (navbar.classList.contains("show-navbar")){
+            showMenu();
+        }
+    });
 }
 
 init()

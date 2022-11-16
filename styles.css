@@ -16,7 +16,7 @@
     --bgPrimary : #0E1216;
     --bgSecondary: #282A37;
     --bgTertiary: #222128;
-    --bgSecondary90: #282a37c2;
+    --bgSecondary90: #282a37ee;
 
     /*Color selected*/
     --selColor: #3e4253;
@@ -35,6 +35,8 @@
     --fs-small1: 0.9rem;
     --fs-medium0: 1.2rem;
     --fs-medium1: 1.4rem;
+    --fs-medium15: 1.6rem;
+    --fs-medium2: 1.9rem;
     --fs-large0: 2.2rem;
     --fs-large1: 2.5rem;
     --fs-xlarge0: 3rem;
@@ -54,7 +56,7 @@ html{
     align-items: start;
     justify-items: center;
     scroll-behavior: smooth;
-    scroll-padding: 40px;
+    scroll-padding: 51px;
     
 }
 
@@ -90,7 +92,7 @@ a{
     color: var(--color2);
     border: 1px solid var(--color2);
     font-size: var(--fs-medium0);
-    font-weight: var(--fw-bold);
+    font-weight: var(--fw-normal);
     border-radius: 5px;
     letter-spacing: 1px;
     transition: all 0.5s;
@@ -123,6 +125,21 @@ a{
     top: 0;
     z-index: 2;
     border-bottom: 1px solid var(--bgSecondary);
+}
+
+#burguer-menu-btn{
+    width: 22px;
+    height: 22px;
+    place-items: center;
+    display: none;
+    cursor: pointer;
+}
+
+#burguer-menu-btn div{
+    height: 2px;
+    width: 100%;
+    background-color: var(--colorWhite);
+    border-radius: 5px;
 }
 
 #navbar{
@@ -195,13 +212,14 @@ a{
 .web-section{
     width: 100%;
     height: auto;
-    min-height: calc(100vh - 50px); /*50px altura del header*/
+    min-height: min(calc(100vh - 50px), 1080px); /*50px altura del header*/
     display: grid;
     place-items: center;
-    padding: 40px;
+    padding: 40px 0;
 }
 
 #hero{
+    max-height: 1080px;
     gap: 25px;
 }
 
@@ -218,11 +236,13 @@ a{
     font-size: var(--fs-xlarge0);
     font-weight: var(--fw-bold);
     color: var(--colorWhite);
+    text-align: center;
 }
 
 #profession{
     font-size: var(--fs-xlarge0);
     font-weight: var(--fw-bold);
+    text-align: center;
 }
 
 #my-portfolio{
@@ -304,16 +324,18 @@ a{
 #project-container{
     width: 100%;
     height: auto;
-    padding: 25px;
+    padding: 25px 0;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
+    place-items: center;
+    gap: 25px 15px;
     grid-auto-rows: auto;
 }
 
 .project-card{
     width: 95%;
-    max-width: 475px;
+    max-width: 260px;
+    min-width: 250px;
     height: 220px;
     background-color: var(--bgSecondary);
     border-radius: 10px;
@@ -327,17 +349,24 @@ a{
 
 .project-info{
     width: 100%;
-    height: 55px;
+    height: 100px;
     position: absolute;
-    bottom: 0;
+    bottom: -50px;
     padding: 5px;
     background-color: var(--bgSecondary90);
     display: grid;
     grid-auto-rows: min-content;
     grid-template-columns: 1fr;
     place-items: center;
-    gap: 5px;
+    gap: 7px;
+    transition: transform 0.5s;
 }
+
+.translateY{
+    transform: translateY(-50px);
+    transition: transform 0.5s;
+}
+
 
 .project-name{
     font-size: var(--fs-small0);
@@ -353,6 +382,17 @@ a{
     grid-auto-flow: column;
     place-items: center;
     gap: 10px;
+}
+
+.project-description{
+    font-size: var(--fs-small0);
+    font-weight: var(--fw-light);
+    color:var(--color2);
+    text-align: center;
+    height: 50px;
+    width: 100%;
+    display: grid;
+    place-items: center;
 }
 
 .img-technologie{
@@ -373,6 +413,10 @@ a{
 
 .js{
     background-image: url("./img/js-icon.png");
+}
+
+#show-more-projects{
+    font-size: var(--fs-small1);
 }
 
 /* Footer */
@@ -412,3 +456,188 @@ a{
     color: var(--colorWhite);
 }
 
+
+@media (max-width: 1230px){
+    #project-container{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .project-card{
+        height: 420px;
+        max-width: 450px;
+    }
+}
+
+@media (max-width: 1080px){
+    .project-card{
+        height: 320px;
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 855px){
+    .project-card{
+        height: 280px;
+        max-width: 310px;
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px){
+
+    *{
+        font-size: 14px;
+    }
+
+    #main-title{
+        font-size: var(--fs-large0);
+    }
+    
+    #profession{
+        font-size: var(--fs-medium2);
+    }
+
+
+    .project-card{
+        height: 220px;
+        max-width: 250px;
+    }
+}
+
+@media(max-width: 660px){
+    #project-container{
+        grid-template-columns: 1fr;
+    }
+
+    .project-card{
+        height: 320px;
+        max-width: 350px;
+    }
+
+    .category-card{
+        width: 80px;
+        height: 80px;
+    }
+
+    .category-img{
+        width: 25px;
+        height: 25px;
+    }
+
+    #category-container{
+        gap: 30px;
+    }
+
+    #burguer-menu-btn{
+        display: grid;
+        position: relative;
+        align-self: center;
+    }
+
+    #burguer-menu-btn.hide-menu div:nth-child(1){
+        position: absolute;
+        top: 10px;
+        left: 1px;
+        transform: rotateZ(45deg);
+        transition: transform 0.5s;
+    }
+
+    #burguer-menu-btn.hide-menu div:nth-child(3){
+        position: absolute;
+        top: 10px;
+        left: 1px;
+        transform: rotateZ(-45deg);
+        transition: transform 0.5s;
+    }
+
+    #burguer-menu-btn.hide-menu div:nth-child(2){
+        display: none;
+    }
+
+    #navbar{
+        display: none;
+    }
+
+    #navbar.show-navbar{
+        display: grid;
+        position: fixed;
+        top: 51px;
+        left: 0px;
+        height: 200px;
+        width: 100%;
+        background-color: var(--bgSecondary90);
+        animation-name: showmenu;
+        animation-iteration-count: 1;
+        animation-duration: 0.5s;
+    }
+
+    @keyframes showmenu {
+        from{
+            transform: scale(0.2);
+        }
+        to{
+            transform: scale(1);
+        }
+    }
+
+
+    #navbar-list{
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+
+@media (max-width: 530px){
+
+    #main-title{
+        font-size: var(--fs-medium2);
+    }
+    
+    #profession{
+        font-size: var(--fs-medium15);
+    }
+
+    #category-container{
+        gap: 20px;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .category-card{
+        width: 120px;
+        height: 60px;
+        grid-auto-flow: column;
+        place-items: center;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .project-card{
+        height: 220px;
+        max-width: 250px;
+        min-width: none;
+    }
+
+    .category-name{
+        font-size: var(--fs-small0);
+    }
+}
+
+@media (max-width: 460px){
+
+    #main{
+        padding: 0 25px 71px 25px;
+    }
+
+    #main-title{
+        font-size: var(--fs-medium15);
+    }
+    
+    #profession{
+        font-size: var(--fs-medium1);
+    }
+}
+
+@media (max-width: 375px){
+    *{
+        font-size: 12px;
+    }
+}
