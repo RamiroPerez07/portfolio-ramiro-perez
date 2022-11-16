@@ -54,6 +54,8 @@ html{
     align-items: start;
     justify-items: center;
     scroll-behavior: smooth;
+    scroll-padding: 40px;
+    
 }
 
 body{
@@ -119,6 +121,7 @@ a{
     background-color: var(--bgTertiary);
     position:sticky;
     top: 0;
+    z-index: 2;
     border-bottom: 1px solid var(--bgSecondary);
 }
 
@@ -232,7 +235,7 @@ a{
     height: auto;
     min-height: 100px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: auto;
     place-items: center;
     gap: 40px;
@@ -262,6 +265,10 @@ a{
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+}
+
+#all-icon{
+    background-image: url("./img/all-icon.png");
 }
 
 #html-icon{
@@ -342,7 +349,8 @@ a{
     width: auto;
     height: auto;
     display: grid; 
-    grid-template-columns: repeat(3, 1fr);
+    grid-auto-columns: min-content;
+    grid-auto-flow: column;
     place-items: center;
     gap: 10px;
 }

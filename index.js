@@ -1,68 +1,61 @@
-const Projects = [
-    {
-        id: 1,
-        name: "Racademy Website",
-        description: "",
-        url: "https://racademy-zeta.vercel.app/",
-        img: "./img/racademy-website.PNG",
-        technologies: ["HTML", "CSS", "JAVASCRIPT"]
-    },
-    {
-        id: 2,
-        name: "Ramusic",
-        description: "",
-        url: "https://ramusic-music-app.vercel.app/",
-        img: "./img/ramusic.PNG",
-        technologies: ["HTML", "CSS", "JAVASCRIPT"]
-    },
-    {
-        id: 3,
-        name: "Nucba Zappi",
-        description: "",
-        url: "https://food-market-coral.vercel.app/",
-        img: "./img/nucbazappi.PNG",
-        technologies: ["HTML", "CSS", "JAVASCRIPT"]
-    },
-    {
-        id: 4,
-        name: "Guitar Chords App",
-        description: "",
-        url: "https://guitar-chords-app.vercel.app/",
-        img: "./img/guitar-chords.PNG",
-        technologies: ["HTML", "CSS", "JAVASCRIPT"]
-    }
-]
-
 //variables
 
 //contenedores
-const projectContainer = document.getElementById("project-container")
-const categoryContainer = document.getElementById("category-container")
-let categoriesCards = document.getElementsByClassName("category-card")
-categoriesCards = [...categoriesCards]
+const projectContainer = document.getElementById("project-container");
+const categoryContainer = document.getElementById("category-container");
+let categoriesCards = document.getElementsByClassName("category-card");
+categoriesCards = [...categoriesCards];
 
+//botones
+const showMoreProjectsBtn = document.getElementById("show-more-projects");
+const goToPortfolioBtn = document.getElementById("portfolio-btn");
+
+//controlador
+ProjectViewController = {
+    index: 0,
+    limit: splitProjects(Projects,4).length,
+}
 
 function createHtmlProjectCard(project){
     return `
-    <div class="project-card" style="background-image: url('${project.img}');">
+    <div class="project-card" style="background-image: url('${project.img}');" data-id=${project.id}>
         <div class="project-info">
             <h3 class="project-name">${project.name}</h3>
             <div class="technologies">
-                <div class="img-technologie html"></div>
-                <div class="img-technologie css"></div>
-                <div class="img-technologie js"></div>
+                ${project.technologies.includes("HTML")?'<div class="img-technologie html"></div>':""}
+                ${project.technologies.includes("CSS")?'<div class="img-technologie css"></div>':""}
+                ${project.technologies.includes("JAVASCRIPT")?'<div class="img-technologie js"></div>':""}
             </div>
         </div>
     </div>
     `
 }
 
-function renderProjectsInProjectContainer(arrayOfProjects){
-    const html = arrayOfProjects.map(project =>{
+function renderProjectsInProjectContainer(arrayOfProjects, index=0){
+    /*con esta linea me spliteo el vector de arrays en componentes de tamaño 4 que integran 
+    otra lista superior => [ [{},{},{},{}] , [{},{},{},{}] ] y asi
+    */
+    let dividedProjects = splitProjects(arrayOfProjects, 4); 
+    /*Luego, para recortar el array en tantos componentes quiero mostrar uso slice()*/
+    visibleProjects = dividedProjects.slice(0,index+1)
+    /* Utilizo una funcion para concatenar las listas mostradas y poder recorrerlas con el map*/
+    visibleProjects = concatenateArrays(visibleProjects);
+    const html = visibleProjects.map(project =>{
         return createHtmlProjectCard(project);
     }).join("");
     projectContainer.innerHTML = html;
+    return dividedProjects;
 }  
+
+function concatenateArrays(arrayOfarrays){
+    let result = []
+    for(let i=0; i<arrayOfarrays.length;i++){
+        result = result.concat(arrayOfarrays[i])
+    }
+    return result;
+}
+
+
 
 function selectCategory(event){
     let categoryCard;
@@ -75,8 +68,18 @@ function selectCategory(event){
     }
     const categoryValue = categoryCard.dataset.language
     const filterProjects = filterProjectByTag(categoryValue);
-    renderProjectsInProjectContainer(filterProjects);
+    const dividedProjects = renderProjectsInProjectContainer(filterProjects);
+    setCategorySelectedStyle(categoryCard);
 
+    //me genero una variable controlador GLOBAL cada vez que ingreso a una nueva categoria
+    ProjectViewController = {
+        index : 0,
+        limit: dividedProjects.length,
+    }
+    setViewMoreBtnState();
+}
+
+function setCategorySelectedStyle(categoryCard){
     categoriesCards.forEach(card =>{
         if (card.classList.contains("selected-category")){
             card.classList.remove("selected-category")
@@ -92,9 +95,54 @@ function filterProjectByTag(tag){
     return filterProjects;
 }
 
+//Funciones que voy probando
+
+function showMoreProjects(){
+    //index arranca en 0 por defecto, por eso se incrementa cada vez que se presiona el boton
+    ProjectViewController.index++;
+
+    const categoryCard = categoriesCards.filter(category =>{
+        return category.classList.contains("selected-category")
+    })
+    let filterProjects;
+    if (!categoryCard.length){
+        filterProjects = Projects;
+    }else{
+        const categoryValue = categoryCard[0].dataset.language
+        filterProjects = filterProjectByTag(categoryValue);
+    }
+    renderProjectsInProjectContainer(filterProjects,ProjectViewController.index)
+    setViewMoreBtnState()
+}
+
+function setViewMoreBtnState(){
+    if (ProjectViewController.index + 1 == ProjectViewController.limit){
+        showMoreProjectsBtn.style.display = "none";
+    }else{
+        showMoreProjectsBtn.style.display = "block";
+    }
+}
+
+function openProjectUrl(event){
+    event.preventDefault();
+    if (!event.target.classList.contains("project-card"))return;
+    const idProject = event.target.dataset.id;
+    const filterProject = Projects.filter(project =>{
+        return project.id == idProject
+    })
+    console.log(filterProject)
+    const urlProject = filterProject[0].url;
+    window.open(urlProject)
+}
+
 function init(){
     renderProjectsInProjectContainer(Projects);
-    categoryContainer.addEventListener("click", selectCategory)
+    setViewMoreBtnState();
+    categoryContainer.addEventListener("click", selectCategory);
+    showMoreProjectsBtn.addEventListener("click", showMoreProjects);
+    goToPortfolioBtn.addEventListener("click", function(){window.location.href='#my-portfolio'});
+
+    projectContainer.addEventListener("click", openProjectUrl)
 }
 
 init()

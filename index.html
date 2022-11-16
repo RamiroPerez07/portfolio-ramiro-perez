@@ -16,7 +16,7 @@
                     <a href="#">Home</a>
                 </li>
                 <li class="navbar-list-item">
-                    <a href="#">Portfolio</a>
+                    <a href="#my-portfolio">Portfolio</a>
                 </li>
                 <li class="navbar-list-item">
                     <a href="#">About me</a>
@@ -34,6 +34,10 @@
         </section>
         <section id="my-portfolio" class="web-section">
             <div id="category-container">
+                <div class="category-card selected-category" data-language="ALL">
+                    <div class="category-img" id="all-icon"></div>
+                    <p class="category-name">ALL</p>
+                </div>
                 <div class="category-card" data-language="HTML">
                     <div class="category-img" id="html-icon"></div>
                     <p class="category-name">HTML</p>
@@ -48,7 +52,7 @@
                 </div>
             </div>
             <div id="project-container">
-                <div class="project-card" style="background-image: url('./img/ramusic.PNG');">
+                <!-- <div class="project-card" style="background-image: url('./img/ramusic.PNG');">
                     <div class="project-info">
                         <h3 class="project-name">Racademy Website</h3>
                         <div class="technologies">
@@ -57,14 +61,15 @@
                             <div class="img-technologie js"></div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
-            <button class="btn-style1" id="view-more-projects">View More</button>
+            <button class="btn-style1" id="show-more-projects">Show More</button>
         </section>
     </main>
     <footer id="footer">
         <p id="sign">Coded by <a target="_blank" href="https://github.com/RamiroPerez07">myself</a></p>
     </footer>
+    <script src="./data.js"></script>
     <script src="./index.js"></script>
 </body>
 </html>
