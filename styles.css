@@ -27,6 +27,7 @@
     --color1: #4688EE;
     --color2: #5CBACD;
     --color3: #EFA82F;
+    --color4: #543BF7;
 
     /*Font size*/
     --fs-xsmall0: 0.6rem;
@@ -238,11 +239,15 @@ a{
     justify-items: center;
 }
 
-#main-title{
+.main-title{
     font-size: var(--fs-xlarge0);
     font-weight: var(--fw-bold);
     color: var(--colorWhite);
     text-align: center;
+}
+
+#developer-name{
+    color: var(--color4);
 }
 
 #profession{
@@ -495,7 +500,7 @@ a{
         font-size: 14px;
     }
 
-    #main-title{
+    .main-title{
         font-size: var(--fs-large0);
     }
     
@@ -595,7 +600,7 @@ a{
 
 @media (max-width: 530px){
 
-    #main-title{
+    .main-title{
         font-size: var(--fs-medium2);
     }
     
@@ -633,7 +638,7 @@ a{
         padding: 0 25px 71px 25px;
     }
 
-    #main-title{
+    .main-title{
         font-size: var(--fs-medium15);
     }
     
