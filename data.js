@@ -28,7 +28,7 @@ const Projects = [
     {
         id: 4,
         name: "Guitar Chords App",
-        description: "Discover the musical nomenclature of chords starting from the position of the fingers",
+        description: "Discover the musical nomenclature of chords",
         url: "https://guitar-chords-app.vercel.app/",
         img: "./img/guitar-chords.PNG",
         technologies: ["ALL","HTML", "JAVASCRIPT"]
