@@ -223,6 +223,10 @@ a{
     place-content: center;
     max-height: 1080px;
     gap: 85px;
+    background-image: url("./img/bg-hero.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right 50%;
 }
 
 #greeting-container{
