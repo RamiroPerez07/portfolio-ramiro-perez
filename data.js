@@ -2,12 +2,20 @@
 
 const Projects = [
     {
+        id: 0,
+        name : "Reffects",
+        description: "Explore new sounds for your guitar",
+        url: "https://reffects.vercel.app/",
+        img: "./img/reffects.PNG",
+        technologies: ["ALL", "HTML", "CSS", "JAVASCRIPT"],
+    },
+    {
         id: 1,
         name: "Racademy Website",
         description: "Guitar lesson sales simulation",
         url: "https://racademy-zeta.vercel.app/",
         img: "./img/racademy-website.PNG",
-        technologies: ["ALL", "HTML", "CSS", "JAVASCRIPT"]
+        technologies: ["ALL", "HTML", "CSS", "JAVASCRIPT"],
     },
     {
         id: 2,
@@ -15,7 +23,7 @@ const Projects = [
         description: "Listen to the top 10 songs from different artists",
         url: "https://ramusic-music-app.vercel.app/",
         img: "./img/ramusic.PNG",
-        technologies: ["ALL", "CSS", "JAVASCRIPT"]
+        technologies: ["ALL", "HTML", "CSS", "JAVASCRIPT"],
     },
     {
         id: 3,
@@ -23,7 +31,7 @@ const Projects = [
         description: "Food ecommerce - Challenge from Nucba",
         url: "https://food-market-coral.vercel.app/",
         img: "./img/nucbazappi.PNG",
-        technologies: ["ALL","JAVASCRIPT"]
+        technologies: ["ALL", "HTML", "CSS", "JAVASCRIPT"],
     },
     {
         id: 4,
@@ -31,7 +39,7 @@ const Projects = [
         description: "Discover the musical nomenclature of chords",
         url: "https://guitar-chords-app.vercel.app/",
         img: "./img/guitar-chords.PNG",
-        technologies: ["ALL","HTML", "JAVASCRIPT"]
+        technologies: ["ALL", "HTML", "CSS", "JAVASCRIPT"],
     },
     {
         id: 5,
@@ -39,7 +47,7 @@ const Projects = [
         description: "Discover the astronomical image of the day",
         url: "https://nasa-images-xi.vercel.app/",
         img: "./img/nasa.PNG",
-        technologies: ["ALL","JAVASCRIPT"]
+        technologies: ["ALL", "HTML", "CSS", "JAVASCRIPT"],
     },
     {
         id: 6,
@@ -47,7 +55,7 @@ const Projects = [
         description: "Challenge from Frontend Mentor",
         url: "https://faq-accordion-card-lac.vercel.app/",
         img: "./img/faq-accordion.PNG",
-        technologies: ["ALL","HTML","CSS","JAVASCRIPT"]
+        technologies: ["ALL", "HTML", "CSS", "JAVASCRIPT"],
     },
     {
         id: 7,
@@ -55,7 +63,7 @@ const Projects = [
         description: "Challenge from Frontend Mentor",
         url: "https://frontend-mentor-challenge-fawn.vercel.app/",
         img: "./img/sign-up-component.PNG",
-        technologies: ["ALL","HTML","CSS","JAVASCRIPT"]
+        technologies: ["ALL", "HTML", "CSS", "JAVASCRIPT"],
     },
     {
         id: 8,
@@ -63,7 +71,7 @@ const Projects = [
         description: "Application for professional buyers",
         url: "https://buyer-s-app.vercel.app/",
         img: "./img/buyerapp.PNG",
-        technologies: ["ALL","HTML","CSS","JAVASCRIPT"]
+        technologies: ["ALL", "HTML", "CSS", "JAVASCRIPT"],
     },
     {
         id: 9,
@@ -71,7 +79,7 @@ const Projects = [
         description: "Calculator for simple mathematical operations between two numbers",
         url: "https://calculadora-ramiperez.vercel.app/",
         img: "./img/calculator.PNG",
-        technologies: ["ALL","JAVASCRIPT"]
+        technologies: ["ALL", "HTML", "CSS", "JAVASCRIPT"],
     },
     {
         id: 10,
@@ -79,7 +87,7 @@ const Projects = [
         description: "Images and information about the characters of Dragon Ball Super",
         url: "https://dragon-ball-super-app.vercel.app/",
         img: "./img/dragonballpics.PNG",
-        technologies: ["ALL","JAVASCRIPT"]
+        technologies: ["ALL", "HTML", "CSS", "JAVASCRIPT"],
     },
 ]
 
